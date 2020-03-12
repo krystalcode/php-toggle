@@ -1,6 +1,6 @@
 <?php
 
-namespace KrystalCode\FeatureToggle;
+namespace KrystalCode\Toggle;
 
 class Exception extends \Exception
 {

@@ -1,12 +1,12 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/67f27cbe-9125-4b7e-a111-24c2aa76f186/big.png)](https://insight.sensiolabs.com/projects/67f27cbe-9125-4b7e-a111-24c2aa76f186)
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krystalcode/feature-toggle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krystalcode/feature-toggle/?branch=master) [![Build Status](https://travis-ci.org/krystalcode/feature-toggle.svg?branch=master)](https://travis-ci.org/krystalcode/feature-toggle) [![Code Coverage](https://scrutinizer-ci.com/g/krystalcode/feature-toggle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krystalcode/feature-toggle/?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/54e0ed6d271c93aa120001ce/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54e0ed6d271c93aa120001ce) [![Latest Stable Version](https://poser.pugx.org/krystalcode/feature-toggle/v/stable.svg)](https://packagist.org/packages/krystalcode/feature-toggle) [![License](https://poser.pugx.org/krystalcode/feature-toggle/license.svg)](https://packagist.org/packages/krystalcode/feature-toggle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/krystalcode/php-toggle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/krystalcode/php-toggle/?branch=master) [![Build Status](https://travis-ci.org/krystalcode/php-toggle.svg?branch=master)](https://travis-ci.org/krystalcode/php-toggle) [![Code Coverage](https://scrutinizer-ci.com/g/krystalcode/php-toggle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/krystalcode/php-toggle/?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/54e0ed6d271c93aa120001ce/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54e0ed6d271c93aa120001ce) [![Latest Stable Version](https://poser.pugx.org/krystalcode/php-toggle/v/stable.svg)](https://packagist.org/packages/krystalcode/php-toggle) [![License](https://poser.pugx.org/krystalcode/php-toggle/license.svg)](https://packagist.org/packages/krystalcode/php-toggle)
 
-# FeatureToggle
+# Toggle
 
 ## About
 
-FeatureToggle is an easy to use, extensible library that aims to provide feature toggle functionality for PHP applications.
+Toggle is an easy to use, extensible library that aims to provide feature toggle functionality for PHP applications.
 
 ## Model
 
@@ -35,7 +35,7 @@ awesomefeature/prod: false
 The following code will enable the feature on the development and stage environments and disable it on the production environment.
 
 ```
-use KrystalCode\FeatureToggle\Toggle;
+use KrystalCode\Toggle\Toggle;
 
 if (Toggle::yaml('absolute/path/to/config.yml', 'awesomefeature/'.$yourCurrentEnvironment)) {
     // Code to be executed when the feature is enabled.
@@ -53,7 +53,7 @@ theme: blue
 The following code will enable the feature when the value of the variable "theme" is "blue".
 
 ```
-use KrystalCode\FeatureToggle\Toggle;
+use KrystalCode\Toggle\Toggle;
 
 if (Toggle::yaml('absolute/path/to/config.yml', 'theme', 'blue')) {
     // Code to be executed when the feature is enabled.
@@ -76,7 +76,7 @@ return array(
 and your application code would be:
 
 ```
-use KrystalCode\FeatureToggle\Toggle;
+use KrystalCode\Toggle\Toggle;
 
 if (Toggle::php('absolute/path/to/config.php', 'awesomefeature/'.$yourCurrentEnvironment)) {
     // Code to be executed when the feature is enabled.
@@ -96,7 +96,7 @@ awesomefeature/prod = false
 and your application code would be:
 
 ```
-use KrystalCode\FeatureToggle\Toggle;
+use KrystalCode\Toggle\Toggle;
 
 if (Toggle::ini('absolute/path/to/config.ini', 'awesomefeature/'.$yourCurrentEnvironment)) {
     // Code to be executed when the feature is enabled.
@@ -107,13 +107,13 @@ if (Toggle::ini('absolute/path/to/config.ini', 'awesomefeature/'.$yourCurrentEnv
 
 #### Yii Framework
 
-You will need to add your configuration in the params.php file (Yii2) or in the main.php file (Yii1) as an array item with index 'featureToggle'. Using the same example as with YAML, your configuration file contents would be:
+You will need to add your configuration in the params.php file (Yii2) or in the main.php file (Yii1) as an array item with index 'toggle'. Using the same example as with YAML, your configuration file contents would be:
 
 ```
 <?php
 // Yii2
 return [
-    'featureToggle' => [
+    'toggle' => [
         'awesomefeature/dev' => true,
         'awesomefeature/stage' => true,
         'awesomefeature/prod' => false,
@@ -123,7 +123,7 @@ return [
 // Yii1
 return [
     'params' => [
-        'featureToggle' => [
+        'toggle' => [
             'awesomefeature/dev' => true,
             'awesomefeature/stage' => true,
             'awesomefeature/prod' => false,
@@ -135,7 +135,7 @@ return [
 and your application code would be:
 
 ```
-use KrystalCode\FeatureToggle\Toggle;
+use KrystalCode\Toggle\Toggle;
 
 // Yii2
 if (Toggle::yii2('awesomefeature/'.$yourCurrentEnvironment)) {
@@ -153,7 +153,7 @@ if (Toggle::yii1('awesomefeature/'.$yourCurrentEnvironment)) {
 Say you would like to enable a feature only for premium users on your website. You can write a custom Toggle as follows:
 
 ```
-use KrystalCode\FeatureToggle\ToggleInterface;
+use KrystalCode\Toggle\ToggleInterface;
 
 class TogglePremiumUser implements ToggleInterface
 {
@@ -177,8 +177,8 @@ class TogglePremiumUser implements ToggleInterface
 The examples above are using the easy syntax provided by a helper class. The full syntax for the YAML examples would be:
 
 ```
-use KrystalCode\FeatureToggle\ConfigLoaderYaml;
-use KrystalCode\FeatureToggle\ToggleConfig;
+use KrystalCode\Toggle\ConfigLoaderYaml;
+use KrystalCode\Toggle\ToggleConfig;
 use Symfony\Component\Yaml\Parser;
 
 $loader = new ConfigLoaderYaml(new Parser(), '/absolute/path/to/config.yml');
@@ -191,8 +191,8 @@ if ($toggle->on()) {
 and
 
 ```
-use KrystalCode\FeatureToggle\ConfigLoaderYaml;
-use KrystalCode\FeatureToggle\ToggleConfig;
+use KrystalCode\Toggle\ConfigLoaderYaml;
+use KrystalCode\Toggle\ToggleConfig;
 use Symfony\Component\Yaml\Parser;
 
 $loader = new ConfigLoaderYaml(new Parser(), '/absolute/path/to/config.yml');
@@ -205,8 +205,8 @@ if ($toggle->on()) {
 For PHP:
 
 ```
-use KrystalCode\FeatureToggle\ConfigLoaderPhp;
-use KrystalCode\FeatureToggle\ToggleConfig;
+use KrystalCode\Toggle\ConfigLoaderPhp;
+use KrystalCode\Toggle\ToggleConfig;
 
 $loader = new ConfigLoaderPhp('/absolute/path/to/config.php');
 $toggle = new ToggleConfig($loader, 'awesomefeature/'.$yourCurrentEnvironment);
@@ -218,8 +218,8 @@ if ($toggle->on()) {
 and for INI:
 
 ```
-use KrystalCode\FeatureToggle\ConfigLoaderIni;
-use KrystalCode\FeatureToggle\ToggleConfig;
+use KrystalCode\Toggle\ConfigLoaderIni;
+use KrystalCode\Toggle\ToggleConfig;
 
 $loader = new ConfigLoaderIni('/absolute/path/to/config.ini');
 $toggle = new ToggleConfig($loader, 'theme', 'blue');

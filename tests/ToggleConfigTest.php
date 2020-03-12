@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the FeatureToggle package.
+ * This file is part of the KrystalCode/Toggle package.
  *
  * (c) Dimitris Bozelos <dbozelos@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace KrystalCode\FeatureToggle\Tests;
+namespace KrystalCode\Toggle\Tests;
 
-use KrystalCode\FeatureToggle\ToggleConfig;
+use KrystalCode\Toggle\ToggleConfig;
 
 class ToggleConfigTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,7 +31,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName3' => 'varValue3',
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -50,7 +50,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName1' => 'varValue1',
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -69,7 +69,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName1' => 'varValue1',
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -87,7 +87,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
      */
     public function testIfConstructorChecksThatConfigIsArray($config)
     {
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -111,7 +111,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName1' => 'varValue1',
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -135,7 +135,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName1' => true,
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -154,7 +154,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName1' => false,
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -173,7 +173,7 @@ class ToggleConfigTest extends \PHPUnit_Framework_TestCase
             'varName1' => 'varValue1',
         );
 
-        $loader = $this->getMockBuilder('\KrystalCode\FeatureToggle\ConfigLoaderPhp')
+        $loader = $this->getMockBuilder('\KrystalCode\Toggle\ConfigLoaderPhp')
             ->disableOriginalConstructor()
             ->getMock();
 

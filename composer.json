@@ -1,9 +1,9 @@
 {
-    "name": "krystalcode/feature-toggle",
+    "name": "krystalcode/toggle",
     "type": "library",
     "description": "Extensible feature toggle functionality for PHP applications.",
     "keywords": [],
-    "homepage": "https://github.com/krystalcode/feature-toggle",
+    "homepage": "https://github.com/krystalcode/php-toggle",
     "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
@@ -20,6 +20,6 @@
         "phpunit/phpunit": "^7.0.0"
     },
     "autoload": {
-        "psr-4": { "KrystalCode\\FeatureToggle\\": "src/" }
+        "psr-4": { "KrystalCode\\Toggle\\": "src/" }
     }
 }

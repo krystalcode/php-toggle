@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the FeatureToggle package.
+ * This file is part of the KrystalCode/Toggle package.
  *
  * (c) Dimitris Bozelos <dbozelos@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace KrystalCode\FeatureToggle;
+namespace KrystalCode\Toggle;
 
 use Symfony\Component\Yaml\Parser as YamlParser;
 
@@ -50,14 +50,14 @@ class Toggle
 
     public static function yii1($varName, $varValue = null)
     {
-        $loader = new ConfigLoaderArray(\Yii::app()->params['featureToggle']);
+        $loader = new ConfigLoaderArray(\Yii::app()->params['toggle']);
         $toggle = new ToggleConfig($loader, $varName, $varValue);
         return $toggle->on();
     }
 
     public static function yii2($varName, $varValue = null)
     {
-        $loader = new ConfigLoaderArray(\Yii::$app->params['featureToggle']);
+        $loader = new ConfigLoaderArray(\Yii::$app->params['toggle']);
         $toggle = new ToggleConfig($loader, $varName, $varValue);
         return $toggle->on();
     }
@@ -67,7 +67,7 @@ class Toggle
      */
     public static function symfony2($varName, $varValue = null)
     {
-        $input = realpath(__DIR__ . '/../../../../app/config/feature-toggle.yml');
+        $input = realpath(__DIR__ . '/../../../../app/config/toggle.yml');
         $loader = new ConfigLoaderYaml(new YamlParser(), $input);
         $toggle = new ToggleConfig($loader, $varName, $varValue);
         return $toggle->on();

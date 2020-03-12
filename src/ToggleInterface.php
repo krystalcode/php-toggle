@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the FeatureToggle package.
+ * This file is part of the KrystalCode/Toggle package.
  *
  * (c) Dimitris Bozelos <dbozelos@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace KrystalCode\FeatureToggle;
+namespace KrystalCode\Toggle;
 
 /**
  * The ToggleInterface should be implemented by all toggle classes.

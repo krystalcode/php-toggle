@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the FeatureToggle package.
+ * This file is part of the KrystalCode/Toggle package.
  *
  * (c) Dimitris Bozelos <dbozelos@gmail.com>
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace KrystalCode\FeatureToggle\Tests;
+namespace KrystalCode\Toggle\Tests;
 
-use KrystalCode\FeatureToggle\ConfigLoaderPhp;
+use KrystalCode\Toggle\ConfigLoaderPhp;
 
 class ConfigLoaderPhpTest extends \PHPUnit_Framework_TestCase
 {

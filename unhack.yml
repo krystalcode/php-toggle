@@ -1,6 +1,6 @@
 unhack:
     project:
-        name: krystalcode/feature-toggle
+        name: krystalcode/php-toggle
 
     schema:
         include: []
