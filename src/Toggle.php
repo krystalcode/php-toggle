@@ -63,7 +63,10 @@ class Toggle
     }
 
     /**
-     * @Issue("Create a Symonfy bundle for better integration incl. Twig extension")
+     * @I Create a Symonfy bundle for better integration incl. Twig extension
+     *    type     : improvement
+     *    priority : normal
+     *    labels   : integrations
      */
     public static function symfony2($varName, $varValue = null)
     {
