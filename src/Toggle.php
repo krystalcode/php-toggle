@@ -75,4 +75,27 @@ class Toggle
         $toggle = new ToggleConfig($loader, $varName, $varValue);
         return $toggle->on();
     }
+
+    /**
+     * @I Create a Drupal module for better integration incl. UI
+     *    type     : improvement
+     *    priority : normal
+     *    labels   : integrations
+     *    notes    : UI could allow site managers to manage toggles and features
+     */
+    public static function drupal($varName, $varValue = null, $path = NULL)
+    {
+        // @I Throw a specialized exception when the config file is not found
+        //    type     : improvement
+        //    priority : normal
+        //    labels   : error-handling
+        if (!$path) {
+            $path = 'web/sites/default/toggle.yml';
+        }
+
+        $input = realpath(__DIR__ . '/../../../../' . $path);
+        $loader = new ConfigLoaderYaml(new YamlParser(), $input);
+        $toggle = new ToggleConfig($loader, $varName, $varValue);
+        return $toggle->on();
+    }
 }
