@@ -1,0 +1,13 @@
+unhack:
+    project:
+        name: krystalcode/feature-toggle
+
+    schema:
+        include: []
+        exclude: []
+
+    issues:
+      title: Review version compatibility with phpunit/phpunit
+      type: bug
+      priority: normal
+      labels: development, testing
